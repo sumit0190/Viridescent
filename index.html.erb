@@ -1,0 +1,45 @@
+---
+layout: mainpage
+title: Blog Name
+---
+  <div class="content">
+    <main class="container">
+    	<div class="row-fluid">
+    		<section class="content">
+    		  <h1>Viridescent</h1>
+          		<div class="sub-title">A greenish blog theme for Middleman</div>
+          		<div class="aboutbox">
+          			<div id="photobox">
+          				<img src="http://static.tumblr.com/igk8r4n/Inim7f86k/aangface.jpg" id="profilephoto"></img>
+          			</div>
+          			<div id="textbox">
+          				<div id="textcorner">
+          					<p>Hi, this is the blog of your favorite avatar, Aang! I have only recently discovered these wondrous machines called computers, all connected with this bunch of wires called the Internet, and I am here to share with the world my adventures as I save the world! </p>
+          				</div>
+          				<div id="iconscorner">
+          					<a href="https://www.facebook.com/avatarthelastairbender" target="_blank"><img src="images/facebook.png" height="32px" width="32px"></img></a>
+          					<a href="https://twitter.com/glider_guy" target="_blank"><img src="images/twitter.png" height="32px" width="32px"></img></a>
+						<a href="https://www.youtube.com/channel/UCwI_MjVC3tlKO94SgM97sSA" target="_blank"><img src="images/youtube.png" height="32px" width="32px"></img></a>
+
+          				</div>
+          			</div>
+          		</div>
+    		</section><br/><br/>
+    		<ul class="entries">
+    			<% page_articles.each_with_index do |article,i| %>
+    		  		<li>
+    		    			<a href="<%= article.url %>">
+    		        		<h3><%= article.title %></h3>
+                			<time><%= article.date.strftime('%e %B %Y') %></time>
+               		 		<div><%= article.summary(150) %></div>
+    		    			</a>
+    		  		</li>
+    		  		<% if article.previous_article %>
+    		  			<hr class="faded"></hr>
+    		  		<% end %>
+    			<% end %>
+    		</ul>
+    	</div>
+
+    </main>
+  </div>
